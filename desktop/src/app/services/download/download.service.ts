@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { config } from '../../../config'
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +7,7 @@ export class DownloadService {
 
   constructor() { }
 
-  triggerDownload(modelid: string, userid: string) {
-
-    const url = `${config.hosts.base}/api/model/downModel?userid=${userid}&modelid=${modelid}`
+  triggerDownload(url: string, modelid: string, userid: string) {
     let aTag: any = document.createElement('a')
     let body = document.body
     aTag.href = url

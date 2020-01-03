@@ -9,12 +9,12 @@ import { StoreModule } from '@ngrx/store'
 import { RootStoreModule } from './root-store/root-store.module';
 import { AppRoutingModule } from './app-routing.module';
 import { NgZorroAntdModule, NZ_I18N, zh_CN} from 'ng-zorro-antd'
-import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 /** angular i18n */
-import { registerLocaleData} from '@angular/common'
+import { registerLocaleData, APP_BASE_HREF} from '@angular/common'
 import zh from '@angular/common/locales/zh';
 import { FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { config } from 'src/config/config.dev';
 
 registerLocaleData(zh)
 
@@ -38,10 +38,7 @@ registerLocaleData(zh)
   providers: [
     httpInterceptorProviders,
     {provide: NZ_I18N, useValue: zh_CN},
-    {
-      provide:LocationStrategy, 
-      useClass: HashLocationStrategy
-    }
+    {provide: APP_BASE_HREF, useValue: config.deployUrl }
   ],
   bootstrap: [AppComponent]
 })

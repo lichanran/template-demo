@@ -38,7 +38,7 @@ export class ResponseInterceptor implements HttpInterceptor {
         return next.handle(req)
             .pipe(
                 mergeMap((event: any) => {
-                    if (event instanceof HttpResponseBase) {
+                    if (event instanceof HttpResponse) {
                         return this.handleResponse(event)
                     } else {
                         return of(event)
