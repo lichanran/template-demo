@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "publish:testserver": "ng build -c testserver",
     "publish": "ng build -c production",
     "mock": "ng serve -c mock",
     "mock-server": "node ./src/mocks/index.js"
@@ -22,10 +23,6 @@
     "@angular/platform-browser": "~8.2.13",
     "@angular/platform-browser-dynamic": "~8.2.13",
     "@angular/router": "~8.2.13",
-    "@ngrx/effects": "^8.5.2",
-    "@ngrx/entity": "^8.5.2",
-    "@ngrx/store": "^8.5.2",
-    "@ngrx/store-devtools": "^8.5.2",
     "@types/jquery": "^3.3.31",
     "immer": "^5.1.0",
     "ng-zorro-antd": "^8.5.2",

@@ -1,0 +1,16 @@
+<div >
+    <div class="mask"  
+         [ngClass]="maskAnimationClassMap" 
+         [class.hidden]="hidden"
+         (click)="handleClose()" 
+    ></div>
+    <div class="modal-wrap"
+        [style.visibility]="hidden ? 'hidden' : null"
+    >
+        <div class="center-box"
+            [ngClass]="modalAnimationClassMap" 
+        >
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div >

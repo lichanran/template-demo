@@ -1,0 +1,17 @@
+/* scroll bar section */
+.scroll-bar {
+    position: absolute;
+    right: 0;
+    width: 20px;
+    height: 400px;
+}
+.scrollbar-handler {
+    cursor: pointer;
+}
+.scrollbar-visible {
+    width: 4px;   
+    height: 100%;
+    background-color: #0077ff;
+    margin: auto;
+    border-radius: 2px;
+}

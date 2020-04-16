@@ -1,0 +1,100 @@
+
+/* ===================== animations ========================= */
+/* fade motion */
+
+/* make-motion https://github.com/NG-ZORRO/ng-zorro-antd/blob/f7fd1e92e4a3b38af13afafe6c0fd7aa5e0dfbbb/components/style/mixins/motion.less */
+/* fade https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/core/motion/fade.less */
+
+.fade-enter {
+    animation-duration: 0.3s;   
+    animation-fill-mode: both;
+    animation-play-state: paused;
+
+    opacity: 0;
+    animation-timing-function: linear;
+}
+.fade-enter.fade-enter-active {
+    animation-name: fadeIn;
+    animation-play-state: running;
+}
+.fade-leave {
+    animation-duration: 0.3s;   
+    animation-fill-mode: both;
+    animation-play-state: paused;
+
+    animation-timing-function: linear;
+}
+.fade-leave.fade-leave-active {
+    animation-name: fadeOut;
+    animation-play-state: running;
+    pointer-events:  none;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* try zoom */
+/* https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/core/motion/zoom.less */
+.zoom-enter {
+    animation-duration: 0.3s;   
+    animation-fill-mode: both;
+    animation-play-state: paused;
+
+    transform: scale(0);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.08, 0.82, 0.17, 1);
+    user-select: none;
+}
+.zoom-enter.zoom-enter-active {
+    animation-name: zoomIn;
+    animation-play-state: running;
+}
+.zoom-leave {
+    animation-duration: 0.3s;   
+    animation-fill-mode: both;
+    animation-play-state: paused;
+
+    animation-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+.zoom-leave.zoom-leave-active {
+    animation-name: zoomOut;
+    animation-play-state: running;
+    pointer-events:  none;
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+}

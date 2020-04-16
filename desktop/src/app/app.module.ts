@@ -1,44 +1,53 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule} from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
-import { httpInterceptorProviders } from './http-interceptors'
+import { HashLocationStrategy, LocationStrategy, APP_BASE_HREF } from "@angular/common";
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { ReactiveFormsModule, FormsModule} from '@angular/forms'
+// import { AppRoutingModule } from './app-routing.module';
 
+import { config } from '../config/index';
+import { httpInterceptorProviders } from './http-interceptors'
 import { AppComponent } from './app.component';
-import { StoreModule } from '@ngrx/store'
-import { RootStoreModule } from './root-store/root-store.module';
-import { AppRoutingModule } from './app-routing.module';
-import { NgZorroAntdModule, NZ_I18N, zh_CN} from 'ng-zorro-antd'
+import { PopUpComponent } from './kits/components/pop-up/pop-up.component'
+import { ScrollbarComponent } from './kits/components/scrollbar/scrollbar.component';
+
 /** angular i18n */
-import { registerLocaleData, APP_BASE_HREF} from '@angular/common'
+import { registerLocaleData} from '@angular/common'
 import zh from '@angular/common/locales/zh';
-import { FormsModule} from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { config } from 'src/config/config.dev';
+
+// 按需加载ng-zorro
+// import { NzButtonModule } from 'ng-zorro-antd/button'
+// import { NZ_I18N, zh_CN} from 'ng-zorro-antd'
+
 
 registerLocaleData(zh)
-
 
 @NgModule({
   declarations: [
     AppComponent,
+    ScrollbarComponent,
+    PopUpComponent,
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({
-    }),
-    RootStoreModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
     HttpClientModule,
-    NgZorroAntdModule,
-    FormsModule,
-    BrowserAnimationsModule
+    // ReactiveFormsModule,
+    // FormsModule,
+    // BrowserAnimationsModule,
+    /** 按需加载ng-zorro */
   ],
   providers: [
     httpInterceptorProviders,
     {provide: NZ_I18N, useValue: zh_CN},
-    {provide: APP_BASE_HREF, useValue: config.deployUrl }
+    {
+      provide:LocationStrategy, 
+      useClass: HashLocationStrategy
+    },
+    {
+      provide: APP_BASE_HREF,
+      useValue: config.baseHref
+    }
   ],
   bootstrap: [AppComponent]
 })

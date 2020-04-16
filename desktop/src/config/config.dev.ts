@@ -2,8 +2,14 @@ import {Config} from './config-types'
 
 export const config: Config = {
     hosts: {
-        base: "",
+        // base: "http://10.24.22.9:8888",
+        // window server
+        // base: "http://10.24.22.175:8888",
+
+        // 海峰本地地址
+        base: "http://10.25.11.97:8888",
     },
-    deployUrl: "/",
-    successCode: 0
+    successCode: 0,
+    baseHref: "/",
+    enableActionLogger: false,
 }

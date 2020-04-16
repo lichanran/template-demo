@@ -1,6 +1,6 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import { ResponseInterceptor } from './response-interceptor'
-import { AuthInterceptor } from './auth-interceptor'
+import { AuthInterceptor } from './auth-interceptors'
 
 export const httpInterceptorProviders = [
     {
@@ -13,7 +13,5 @@ export const httpInterceptorProviders = [
         useClass: AuthInterceptor,
         multi: true
     },
-
     // further
-
 ]

@@ -1,0 +1,11 @@
+<div  class="scroll-bar" [style.height]="scrollbarHeight + 'px'">
+    <div #handler class="scrollbar-handler" 
+            [style.height]="handlerHeight+ 'px'" 
+            (mousedown)="startDrag($event)"
+            (mousemove)="mousemoveHandler($event)"
+            (mouseleave)="cancelDrag()"
+            (mouseup)="cancelDrag()"
+    >
+        <div class="scrollbar-visible"></div>
+    </div>
+</div>

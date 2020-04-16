@@ -2,8 +2,8 @@ import {Config} from './config-types'
 
 export const config: Config = {
     hosts: {
-        base: ""
+        base: "http://localhost:3000"
     },
-    deployUrl: "/",
-    successCode: 0
+    baseHref: "/",
+    enableActionLogger: false,
 }

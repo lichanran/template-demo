@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ErrorViewComponent } from './error-view.component';
+import { ScrollbarComponent } from './scrollbar.component';
 
-describe('ErrorViewComponent', () => {
-  let component: ErrorViewComponent;
-  let fixture: ComponentFixture<ErrorViewComponent>;
+describe('ScrollbarComponent', () => {
+  let component: ScrollbarComponent;
+  let fixture: ComponentFixture<ScrollbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ErrorViewComponent ]
+      declarations: [ ScrollbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ErrorViewComponent);
+    fixture = TestBed.createComponent(ScrollbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
